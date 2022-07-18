@@ -1,0 +1,16 @@
+---
+IPMI_exporter_config_dir: /var/lib/lovoo_exporter
+IPMI_exporter_run_in_docker: true
+IPMI_exporter_docker_network_name: prom_network
+IPMI_exporter_container_name: lovoo_exp        
+IPMI_exporter_docker_image: lovoo/ipmi_exporter
+IPMI_exporter_docker_labels:
+  - prometheus
+  - exporter
+  - ipmi_exporter
+IPMI_exporter_host_port: 9289
+IPMI_exporter_host_address: 127.0.0.1
+IPMI_exporter_version: latest
+IPMI_exporter_arch: linux-amd64
+IPMI_exporter_metrics_path: metrics
+IPMI_exporter_user: IPMI

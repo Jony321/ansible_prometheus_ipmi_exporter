@@ -1,0 +1,5 @@
+- name: Ensure prometheus_blackbox_exporter
+  hosts: all
+
+  roles:
+    - ansible_prometheus_ipmi_exporter
