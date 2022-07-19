@@ -16,3 +16,7 @@
           labels: "{{ IPMI_exporter_docker_labels }}"
           devices:
             - "/dev/ipmi0"
+      networks:
+        default:
+          external:
+            name: "{{ IPMI_exporter_docker_network_name }}"
