@@ -1,5 +1,5 @@
 ---
-- name: Restart blackbox exporter
+- name: Restart IPMI exporter
   service:
-    name: blackbox-exporter.service
+    name: IPMI-exporter.service
     state: restarted

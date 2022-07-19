@@ -3,7 +3,7 @@
   become: yes
   become_user: root
   get_url:
-    url: "https://github.com/prometheus/ipmi_exporter/releases/download/v{{ IPMI_exporter_version }}/blackbox_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}.tar.gz"
+    url: "https://github.com/prometheus-community/ipmi_exporter/releases/download/v{{ IPMI_exporter_version }}/ipmi_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}.tar.gz"
     dest: "{{ IPMI_exporter_config_dir }}/sources/IPMI_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}.tar.gz"
     mode: 0644
     owner: root
@@ -14,16 +14,16 @@
   become_user: root
   unarchive:
     remote_src: yes
-    src: "{{ IPMI_exporter_config_dir }}/sources/blackbox_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}.tar.gz"
+    src: "{{ IPMI_exporter_config_dir }}/sources/IPMI_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}.tar.gz"
     dest: "{{ IPMI_exporter_config_dir }}/sources/"
-    creates: "{{ IPMI_exporter_config_dir }}/sources/blackbox_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}/IPMI_exporter"
+    creates: "{{ IPMI_exporter_config_dir }}/sources/ipmi_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}/"
 
 - name: Copy exporter to PATH
   become: yes
   become_user: root
   copy:
     remote_src: yes
-    src: "{{ IPMI_exporter_config_dir }}/sources/IPMI_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}/IPMI_exporter"
+    src: "{{ IPMI_exporter_config_dir }}/sources/ipmi_exporter-{{ IPMI_exporter_version }}.{{ IPMI_exporter_arch }}/"
     dest: /usr/local/bin/IPMI_exporter
     mode: 0755
     owner: root

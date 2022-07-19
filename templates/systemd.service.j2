@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User={{ IPMI_exporter_user }}
 Group={{ IPMI_exporter_user }}
-ExecStart=/usr/local/bin/blackbox_exporter --web.listen-address="{{ IPMI_exporter_host_address }}:{{ IPMI_exporter_host_port }}"
+ExecStart=/usr/local/bin/IPMI_exporter/ipmi_exporter --web.listen-address="{{ IPMI_exporter_host_address }}:{{ IPMI_exporter_host_port }}"
 ExecStop=/bin/kill -s TERM $MAINPID
 PrivateTmp=true
 Restart=on-failure
