@@ -1,10 +1,9 @@
 ---
 galaxy_info:
-  author: Stan Bogatkin
-  description: Ansible role to deploy Prometheus blackbox exporter
+  description: Ansible role to deploy Prometheus ipmi exporter
   company: Personal project
-  role_name: prometheus_blackbox_exporter
-  namespace: sorrowless
+  role_name: ansible_prometheus_ipmi_exporter
+ 
 
   license: Apache
 
