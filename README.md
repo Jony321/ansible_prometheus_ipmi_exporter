@@ -1,7 +1,7 @@
 ## AndrewGodGivens /ansible_prometheus_ipmi_exporter 
 ============
 
-An Ansible role which installs and configures Prometheus ssl_exporter on Linux
+An Ansible role which installs and configures Prometheus ipmi_exporter on Linux
 
 ============
 
@@ -23,6 +23,6 @@ You can see all vars in defaults/main.yml vars file.
   remote_user: root
 
   roles:
-    - prometheus_ssl_exporter
+    - prometheus_ipmi_exporter
   
 ```
