@@ -1,4 +1,10 @@
 ---
+- name: Install FreeIPMI
+  become: yes
+  ansible.builtin.apt:
+    name: freeipmi
+    state: present
+
 - name: Get IPMI exporter
   become: yes
   become_user: root
